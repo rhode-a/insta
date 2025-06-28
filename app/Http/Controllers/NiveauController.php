@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Niveau;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class NiveauController extends Controller
 {

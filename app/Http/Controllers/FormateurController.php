@@ -46,7 +46,7 @@ class FormateurController extends Controller
             'prenom' => $validated['prenom'],
             'email' => $validated['email'],
             'telephone' => $validated['telephone'] ?? null,
-            'code' => $code,
+            'matricule' => $code,
         ]);
 
         // Lier les options sélectionnées

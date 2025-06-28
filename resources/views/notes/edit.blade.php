@@ -25,7 +25,7 @@
                 <option value="" disabled>-- Sélectionnez un étudiant --</option>
                 @foreach($etudiants as $etudiant)
                     <option value="{{ $etudiant->id }}" {{ $note->etudiant_id == $etudiant->id ? 'selected' : '' }}>
-                        {{ $etudiant->name }} ({{ $etudiant->etudiant->matricule ?? 'N/A' }})
+                        {{ $etudiant->nom }} ({{ $etudiant->etudiant->matricule ?? 'N/A' }})
                     </option>
                 @endforeach
             </select>
@@ -47,7 +47,7 @@
 
         <div class="mb-3">
             <label for="note" class="form-label">Note</label>
-            <input type="number" step="0.01" min="0" max="20" id="note" name="note" class="form-control" value="{{ old('note', $note->note) }}" required>
+            <input type="number" step="0.01" min="0" max="20" id="valeur" name="valeur" class="form-control" value="{{ old('note', $note->valeur) }}" required>
             <div class="invalid-feedback">Veuillez entrer une note entre 0 et 20.</div>
         </div>
 

@@ -15,7 +15,6 @@ class etudiant extends Migration
             $table->string('prenom');
             $table->string('email')->unique();
             $table->string('telephone')->nullable();
-            $table->string('matricule')->unique()->nullable();
 
             // Utilisation de foreignId + constrained() pour option_id
             $table->foreignId('option_id')->constrained('options')->onDelete('cascade');

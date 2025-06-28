@@ -37,8 +37,14 @@
         </div>
 
         <div class="mb-3">
+            <label for="email" class="form-label">Telephone</label>
+            <input type="text" class="form-control" id="telephone" name="telephone" value="{{ old('telephone') }}" required>
+            <div class="invalid-feedback">Veuillez entrer une adresse email valide.</div>
+        </div>
+
+        <div class="mb-3">
             <label for="code_formateur" class="form-label">Code formateur</label>
-            <input type="text" class="form-control" id="code" name="code" value="{{ old('code_formateur', 'form-' . rand(1000,9999)) }}" required>
+            <input type="text" class="form-control" id="matricule" name="matricule" value="{{ old('code_formateur', 'form-' . rand(1000,9999)) }}" required>
             <div class="invalid-feedback">Veuillez générer un code valide.</div>
         </div>
 

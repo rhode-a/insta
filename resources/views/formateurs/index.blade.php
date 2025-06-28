@@ -29,7 +29,7 @@
                 <tr>
                     <td>{{ $formateur->nom }}</td>
                     <td>{{ $formateur->prenom }}</td>
-                    <td>{{ $formateur->code }}</td>
+                    <td>{{ $formateur->matricule }}</td>
                     <td>{{ $formateur->email }}</td>
                     <td>
                         @if(Auth::user()->role === 'admin')

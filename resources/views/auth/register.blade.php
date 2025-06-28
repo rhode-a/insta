@@ -44,7 +44,7 @@
             <select name="role" required class="form-control">
                 <option value="etudiant">Étudiant</option>
                 <option value="formateur">Formateur</option>
-                <option value="parent">Parent</option>
+                <option value="parent">Parent</option>    
             </select>
         </div>
 
