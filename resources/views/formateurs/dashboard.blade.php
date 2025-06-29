@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="container mt-4">
-    <h2 class="mb-4 text-center text-primary">Tableau de bord Formateur</h2>
+    <h2 class="mb-4 text-center text-secondary ">Tableau de bord Formateur</h2>
 
     <div class="row g-4">
         <!-- Cours -->
         <div class="col-md-4">
-            <div class="card text-white bg-info shadow h-100">
+            <div class="card text-white bg-secondary  shadow h-100">
                 <div class="card-body">
                     <h5 class="card-title">Les Cours</h5>
                     <p class="card-text">Voir les cours que vous avez dispensés.</p>
@@ -18,7 +18,7 @@
 
         <!-- Profil -->
         <div class="col-md-4">
-            <div class="card text-white bg-info shadow h-100">
+            <div class="card text-white bg-secondary  shadow h-100">
                 <div class="card-body">
                     <h5 class="card-title">Mon Profil</h5>
                     <p class="card-text">Voir mes informations personnelles.</p>
@@ -30,7 +30,7 @@
         
         <!-- Formateurs -->
         <div class="col-md-4">
-            <div class="card text-white bg-info shadow h-100">
+            <div class="card text-white bg-secondary  shadow h-100">
                 <div class="card-body">
                     <h5 class="card-title">Les Formateurs</h5>
                     <p class="card-text">Voir la liste des formateurs.</p>
@@ -41,7 +41,7 @@
 
         <!-- Articles -->
         <div class="col-md-4">
-            <div class="card text-white bg-info shadow h-100">
+            <div class="card text-white bg-secondary  shadow h-100">
                 <div class="card-body">
                     <h5 class="card-title">Les Articles</h5>
                     <p class="card-text">Voir ou publier des articles.</p>
@@ -52,7 +52,7 @@
 
         <!-- Notes -->
         <div class="col-md-4">
-            <div class="card text-white bg-info shadow h-100">
+            <div class="card text-white bg-secondary  shadow h-100">
                 <div class="card-body">
                     <h5 class="card-title">Les Notes</h5>
                     <p class="card-text">Voir les notes des étudiants.</p>

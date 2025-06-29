@@ -11,28 +11,29 @@ use Illuminate\Support\Facades\Auth;
 
 class CoursController extends Controller
 {
-    public function index()
+   public function index()
     {
         $user = Auth::user();
 
-         if (!in_array(Auth::user()->role, ['admin', 'formateur', 'etudiant'])) {
+        // Autorisation générale
+        if (!in_array($user->role, ['admin', 'formateur', 'etudiant'])) {
             abort(403);
         }
 
-        $coursQuery = Cours::with('formateur')->latest();
+        // On récupère tous les cours pour admin ET formateur
+        // (Si tu souhaites restreindre les étudiants, adapte ici)
+        $coursQuery = Cours::with(['formateur', 'matiere', 'option'])->latest();
 
-        if ($user->role === 'formateur') {
-            if (!$user->formateur) {
-                abort(403, "Vous n'êtes pas lié à un formateur.");
-            }
-
-            $coursQuery->where('formateur_id', $user->formateur->id);
-        }
+        // Plus besoin de filtrer pour formateur : ils voient tout
+        // if ($user->role === 'formateur') {
+        //     $coursQuery->where('formateur_id', $user->formateur->id);
+        // }
 
         $cours = $coursQuery->paginate(20);
 
         return view('cours.index', compact('cours'));
     }
+
 
 
     public function create()

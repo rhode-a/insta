@@ -30,7 +30,7 @@ class ProfileController extends Controller
     public function edit(User $user): View
     {
         if (auth()->id() !== $user->id && auth()->user()->role !== 'admin') {
-            abort(403);
+            abort(403,"seul l'admin peut modifier");
         }
 
         return view('profile.edit', compact('user'));
@@ -39,7 +39,7 @@ class ProfileController extends Controller
     public function update(ProfileUpdateRequest $request, User $user): RedirectResponse
     {
         if (auth()->id() !== $user->id && auth()->user()->role !== 'admin') {
-            abort(403);
+            abort(403,"seul l'admin peut modifier");
         }
 
         $user->fill($request->validated());
@@ -56,7 +56,7 @@ class ProfileController extends Controller
     public function destroy(Request $request, User $user): RedirectResponse
     {
         if (auth()->id() !== $user->id && auth()->user()->role !== 'admin') {
-            abort(403);
+            abort(403,"seul l'admin peut modifier");
         }
 
         $request->validateWithBag('userDeletion', [

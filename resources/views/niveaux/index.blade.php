@@ -10,8 +10,8 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <table class="table table-bordered table-hover">
-        <thead class="table-dark">
+    <table class="table table-hover">
+        <thead class="table-light">
             <tr>
                 <th>#</th>
                 <th>Nom</th>

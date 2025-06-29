@@ -71,6 +71,11 @@ class PreinscriptionController extends Controller
 
     public function valider(Preinscription $preinscription)
     {
+
+        if ($preinscription->valide) {
+        return redirect()->route('preinscription.index')
+                         ->with('error', 'Cette préinscription est déjà validée.');
+        }
         $preinscription->valide = true;
         $preinscription->save();
 

@@ -26,24 +26,22 @@
         </div>
     @elseif($role === 'formateur')
         <h3 class="mb-4">Espace Formateur</h3>
-        <p>Code formateur : <strong>{{ Auth::user()->formateur->matricule ?? 'Non défini' }}</strong></p>
         <div class="row">
             <div class="col-md-6 mb-3">
-                <a href="{{ route('cours.index') }}" class="btn btn-success w-100">Mes Cours</a>
+                <a href="{{ route('cours.index') }}" class="btn btn-secondary  w-100">Mes Cours</a>
             </div>
             <div class="col-md-6 mb-3">
-                <a href="{{ route('articles.create') }}" class="btn btn-warning w-100">Publier un article</a>
+                <a href="{{ route('articles.create') }}" class="btn btn-secondary  w-100">Publier un article</a>
             </div>
         </div>
     @elseif($role === 'etudiant')
         <h3 class="mb-4">Espace Étudiant</h3>
-        <p>Matricule : <strong>{{ Auth::user()->etudiant->matricule ?? 'Non défini' }}</strong></p>
         <div class="row">
             <div class="col-md-6 mb-3">
-                <a href="{{ route('notes.index') }}" class="btn btn-info w-100">Voir mes Notes</a>
+                <a href="{{ route('notes.index') }}" class="btn btn-success w-100">Voir mes Notes</a>
             </div>
             <div class="col-md-6 mb-3">
-                <a href="{{ route('articles.index') }}" class="btn btn-warning w-100">Voir les Articles</a>
+                <a href="{{ route('articles.index') }}" class="btn btn-success w-100">Voir les Articles</a>
             </div>
         </div>
     @elseif($role === 'parent')

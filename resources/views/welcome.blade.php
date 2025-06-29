@@ -4,9 +4,108 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bienvenue - T.T.G Network</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet" />
+
+    <!-- Style de secours si pas d'accès Internet -->
     <style>
-        /* Animation douce à l'apparition */
+        body {
+            margin: 0;
+            font-family: system-ui, sans-serif;
+            background: linear-gradient(to right, #4338ca, #7e22ce, #db2777);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+
+        header, footer {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #facc15;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px #00000055;
+        }
+
+        p {
+            font-size: 1.125rem;
+            max-width: 600px;
+            color: #e5e5e5;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px #00000033;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            margin: 0 10px;
+            font-weight: bold;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-yellow {
+            background-color: #facc15;
+            color: #1e3a8a;
+        }
+
+        .btn-yellow:hover {
+            background-color: #fde047;
+        }
+
+        .btn-white {
+            background-color: white;
+            color: #3730a3;
+        }
+
+        .btn-white:hover {
+            background-color: #f4f4f4;
+        }
+
+        .link {
+            display: block;
+            margin-top: 20px;
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .link:hover {
+            color: #fde047;
+        }
+
+        footer {
+            background-color: #312e81;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        /* Animation */
         [data-fade] {
             opacity: 0;
             transform: translateY(20px);
@@ -19,51 +118,35 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-600 min-h-screen flex flex-col font-sans">
+<body>
 
     <!-- Header -->
-    <header class="flex justify-between items-center px-6 py-5 max-w-7xl mx-auto w-full text-white">
-        <h1 class="text-3xl font-extrabold tracking-wider">T.T.G Network</h1>
-        <nav class="space-x-6 text-lg font-medium">
-            <a href="{{ route('register') }}" class="hover:text-yellow-300 transition">Créer un compte</a>
-            <a href="{{ route('login') }}" class="hover:text-yellow-300 transition">Se connecter</a>
-            <a href="{{ route('preinscription.formulaire') }}" class="hover:text-yellow-300 transition">Préinscription</a>
+    <header>
+        <h1 style="font-size: 2rem; font-weight: bold;">T.T.G Network</h1>
+        <nav style="margin-top: 10px;">
+            <a href="{{ route('register') }}">Créer un compte</a>
+            <a href="{{ route('login') }}">Se connecter</a>
         </nav>
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow flex flex-col justify-center items-center px-6 text-white text-center max-w-3xl mx-auto">
-        <h2 data-fade class="text-5xl font-extrabold mb-6 drop-shadow-xl">
-            Bienvenue sur <span class="text-yellow-300">T.T.G Network</span>
-        </h2>
-        <p data-fade class="text-lg md:text-xl mb-10 max-w-xl leading-relaxed text-gray-200 drop-shadow">
-            La plateforme scolaire intelligente qui facilite la gestion des étudiants, cours, notes, enseignants et plus encore.
-        </p>
+    <main>
+        <h2 data-fade>Bienvenue sur <span style="color: #fde047;">T.T.G Network</span></h2>
+        <p data-fade>La plateforme scolaire intelligente qui facilite la gestion des étudiants, cours, notes, enseignants et plus encore.</p>
 
-        <div class="space-x-4" data-fade>
-            <a href="{{ route('register') }}" 
-               class="bg-yellow-400 text-indigo-900 font-bold px-8 py-3 rounded-xl shadow-lg hover:bg-yellow-300 transition-all duration-300">
-                Créer un compte
-            </a>
-            <a href="{{ route('login') }}" 
-               class="bg-white text-indigo-700 font-semibold px-8 py-3 rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300">
-                Se connecter
-            </a>
-            <a href="{{ route('preinscription.formulaire') }}" 
-               class="block mt-4 text-white underline hover:text-yellow-200 font-medium transition">
-                Remplir le formulaire de préinscription
-            </a>
+        <div data-fade>
+            <a href="{{ route('register') }}" class="btn btn-white" style="text-decoration:none;">Créer un compte</a>
+            <a href="{{ route('login') }}" class="btn btn-white" style="text-decoration:none;">Se connecter</a>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="text-gray-300 text-center py-6 bg-indigo-900 text-sm tracking-wide">
+    <footer>
         © {{ date('Y') }} <strong>T.T.G Network</strong>. Tous droits réservés.
     </footer>
 
-    <!-- JS animation -->
+    <!-- Animation JS -->
     <script>
-        // Apparition animée
         document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll('[data-fade]').forEach(el => {
                 setTimeout(() => el.classList.add('show'), 200);

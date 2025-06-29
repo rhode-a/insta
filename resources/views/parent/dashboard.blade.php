@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="container mt-4">
-    <h2 class="mb-4">Tableau de bord Parent</h2>
+    <h2 class="mb-4 text-info">Tableau de bord Parent</h2>
 
     <div class="row">
         <div class="col-md-6">
-            <div class="card text-white bg-warning mb-3 shadow">
+            <div class="card text-white bg-info mb-3 shadow">
                 <div class="card-body">
                     <h5 class="card-title">Notes des Enfants</h5>
                     <p class="card-text">Suivre les résultats scolaires.</p>
@@ -16,7 +16,7 @@
         </div>
 
         <div class="col-md-6">
-            <div class="card text-white bg-secondary mb-3 shadow">
+            <div class="card text-white bg-info mb-3 shadow">
                 <div class="card-body">
                     <h5 class="card-title">Articles & Annonces</h5>
                     <p class="card-text">Lire les nouvelles de l'école.</p>
