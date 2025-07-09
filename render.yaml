@@ -1,7 +1,37 @@
 services:
   - type: web
     name: laravel-app
-    env: docker
+    env: php
     plan: free
-    autoDeploy: true
-    region: oregon
+
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader
+      php artisan key:generate
+      php artisan migrate --force
+
+    startCommand: php artisan serve --host 0.0.0.0 --port $PORT
+
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://your-laravel-app.onrender.com
+
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        value: sql.freedb.tech
+      - key: DB_PORT
+        value: 3306
+      - key: DB_DATABASE
+        value: freedb_Rhode_db
+      - key: DB_USERNAME
+        value: freedb_Taty
+      - key: DB_PASSWORD
+        value: HN*?hNv!pch447u
+      - key: DB_SSL_MODE
+        value: prefer
